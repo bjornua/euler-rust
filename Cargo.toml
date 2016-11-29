@@ -1,0 +1,7 @@
+[package]
+name = "euler"
+version = "0.1.0"
+authors = ["Bjørn Uhre Arnholtz <bjorn@bjornhub.com>"]
+
+[dependencies]
+primal = ">=0.2"
