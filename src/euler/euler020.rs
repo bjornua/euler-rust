@@ -11,8 +11,6 @@ pub fn factorial(n: u64) -> DigitsBuf {
     return digits;
 }
 
-
-
-pub fn main() -> u64 {
-    factorial(100).into_iter().map(|&x| x as u64).sum()
+pub fn main() -> i64 {
+    factorial(100).into_iter().map(|&x| x as u64).sum::<u64>() as i64
 }

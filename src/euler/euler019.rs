@@ -107,7 +107,7 @@ impl Iterator for Date {
     }
 }
 
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     let begin = Date {
         day: 1,
         month: Month::January,
@@ -122,8 +122,5 @@ pub fn main() -> u64 {
             _ => false,
         });
 
-    // println!("{:#?}", sundays.collect::<Vec<_>>());
-    sundays.count() as u64
-    // 0
-
+    sundays.count() as i64
 }

@@ -9,8 +9,7 @@ fn is_abundant(n: u64) -> bool {
     divsum(n) > n
 }
 
-
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     let abundant_numbers: Vec<_> = (1..28124).filter(|&x| is_abundant(x)).collect();
     let mut forbidden: HashSet<u64> = HashSet::new();
 
@@ -23,5 +22,5 @@ pub fn main() -> u64 {
             forbidden.insert(a + b);
         }
     }
-    (1..28124).filter(|n| !forbidden.contains(&n)).sum()
+    (1..28124).filter(|n| !forbidden.contains(&n)).sum::<u64>() as i64
 }

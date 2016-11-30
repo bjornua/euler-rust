@@ -3,6 +3,8 @@
 // 2⁶ =  64 = 32 + 32
 // 2⁷ = 128 = 64 + 64
 
+
+// use digits;
 fn add(a: &[u64], b: &[u64]) -> Vec<u64> {
     let mut result = Vec::with_capacity(a.len() + 1);
     let mut remainder = 0;
@@ -20,10 +22,10 @@ fn add(a: &[u64], b: &[u64]) -> Vec<u64> {
     return result
 }
 
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     let mut n = vec![1];
     for _ in 0..1000 {
         n = add(&n, &n);
     }
-    n.into_iter().sum()
+    n.into_iter().sum::<u64>() as i64
 }

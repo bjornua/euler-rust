@@ -1,4 +1,4 @@
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     let mut a = 0;
     while a < 1000 {
         let mut b = a + 1;
@@ -9,7 +9,7 @@ pub fn main() -> u64 {
 
             if c*c == csquare {
                 if b < c && a + b + c == 1000 {
-                    return a * b * c
+                    return (a * b * c) as i64
                 }
             }
             b += 1;

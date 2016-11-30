@@ -39,7 +39,7 @@ fn main() {
         }
     }
 }
-const EULERS: &'static [(u64, fn() -> u64)] = &[
+const EULERS: &'static [(u64, fn() -> i64)] = &[
     (1, euler::euler001::main),
     (2, euler::euler002::main),
     (3, euler::euler003::main),
@@ -63,5 +63,9 @@ const EULERS: &'static [(u64, fn() -> u64)] = &[
     (21, euler::euler021::main),
     (22, euler::euler022::main),
     (23, euler::euler023::main),
+    (24, euler::euler024::main),
+    (25, euler::euler025::main),
+    (26, euler::euler026::main),
+    (27, euler::euler027::main),
     (67, euler::euler067::main),
 ];

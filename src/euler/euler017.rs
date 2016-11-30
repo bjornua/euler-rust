@@ -42,10 +42,10 @@ fn to_string(n: u64) -> String {
     }
 }
 
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     let mut sum = 0;
     for n in 1..1001 {
         sum += to_string(n).len();
     }
-    sum as u64
+    sum as i64
 }

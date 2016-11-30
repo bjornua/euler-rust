@@ -48,11 +48,11 @@ pub fn get_product<F: Fn(isize) -> (isize,isize)>(f: F) -> u64 {
     return biggest_product;
 }
 
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     *[
         get_product(|n| (n, 0)),
         get_product(|n| (0, n)),
         get_product(|n| (n, n)),
         get_product(|n| (-n, n))
-    ].into_iter().max().unwrap()
+    ].into_iter().max().unwrap() as i64
 }

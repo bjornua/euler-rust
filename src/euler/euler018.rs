@@ -52,6 +52,6 @@ pub fn maximum_path_sum(numbers: &[u64]) -> u64 {
     numbers[0]
 }
 
-pub fn main() -> u64 {
-    maximum_path_sum(NUMBERS)
+pub fn main() -> i64 {
+    maximum_path_sum(NUMBERS) as i64
 }

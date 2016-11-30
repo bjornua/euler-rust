@@ -22,7 +22,7 @@ fn is_palindrome(n: u64) -> bool {
 
 }
 
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     let mut x = 999;
     let mut highest = 0;
     loop {
@@ -45,5 +45,5 @@ pub fn main() -> u64 {
         }
         x -= 1;
     }
-    return highest
+    highest as i64
 }

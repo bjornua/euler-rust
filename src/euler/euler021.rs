@@ -4,7 +4,7 @@ fn d(n: u64) -> u64 {
     divisors(n).into_iter().filter(|&x| x < n).sum()
 }
 
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     (1..10_000).filter_map(|n| {
         let a = d(n);
         let b = d(a);
@@ -13,5 +13,5 @@ pub fn main() -> u64 {
             return Some(n)
         }
         None
-    }).sum()
+    }).sum::<u64>() as i64
 }

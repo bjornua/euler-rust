@@ -11,10 +11,10 @@ pub fn is_divisable(i: u64) -> bool {
 
 }
 
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     let mut n = 20;
     while !is_divisable(n) {
         n += 20;
     }
-    return n;
+    n as i64
 }

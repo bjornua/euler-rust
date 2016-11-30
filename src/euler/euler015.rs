@@ -73,6 +73,6 @@ fn permutations(m: &[u64]) -> u64 {
     p.into_iter().product::<u64>() / q.into_iter().product::<u64>()
 }
 
-pub fn main() -> u64 {
-    permutations(&[20, 20])
+pub fn main() -> i64 {
+    permutations(&[20, 20]) as i64
 }

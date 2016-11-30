@@ -1,6 +1,6 @@
 const MAX: u64 = 1000;
 
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     let mut x: u64 = 0;
     let mut y: u64 = 0;
     let mut sum: u64 = 0;
@@ -16,5 +16,5 @@ pub fn main() -> u64 {
         y += 5;
     }
 
-    return sum;
+    sum as i64
 }

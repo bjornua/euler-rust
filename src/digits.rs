@@ -27,10 +27,31 @@ impl Digits {
         unsafe { mem::transmute(other) }
     }
 }
-
+use std::fmt;
+impl fmt::Display for Digits {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let mut ret: fmt::Result = Ok(());
+        for n in &self.0 {
+            if let Ok(()) = ret {
+                ret = write!(f, "{}", n);
+            }
+        }
+        ret
+    }
+}
+impl fmt::Display for DigitsBuf {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}", &**self)
+    }
+}
 impl AsRef<Digits> for DigitsBuf {
     fn as_ref(&self) -> &Digits {
         Digits::new(self.0.as_ref())
+    }
+}
+impl<'a> AsRef<[u8]> for &'a Digits {
+    fn as_ref(&self) -> &[u8] {
+        &self.0
     }
 }
 
@@ -39,6 +60,12 @@ impl Deref for DigitsBuf {
     type Target = Digits;
     fn deref(&self) -> &Digits {
         self.as_ref()
+    }
+}
+impl Deref for Digits {
+    type Target = [u8];
+    fn deref(&self) -> &[u8] {
+        &self.0
     }
 }
 
@@ -90,14 +117,14 @@ impl<'a> Mul for &'a Digits {
     }
 }
 
-impl<'a> IntoIterator for &'a Digits {
-    type Item = &'a u8;
-    // type IntoIter = ::std::iter::Rev<::std::slice::Iter<'a, u8>>;
-    type IntoIter = ::std::slice::Iter<'a, u8>;
-    fn into_iter(self) -> Self::IntoIter {
-        (&self.0).into_iter()
-    }
-}
+// impl<'a> IntoIterator for &'a Digits {
+//     type Item = &'a u8;
+//     // type IntoIter = ::std::iter::Rev<::std::slice::Iter<'a, u8>>;
+//     type IntoIter = ::std::slice::Iter<'a, u8>;
+//     fn into_iter(self) -> Self::IntoIter {
+//         (&self.0).into_iter()
+//     }
+// }
 
 #[test]
 fn test_add() {

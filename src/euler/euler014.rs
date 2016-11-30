@@ -24,10 +24,10 @@ impl Iterator for CollatzSequence {
     }
 }
 
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     let (n, _) = (1..1_000_000)
         .map(|n| (n, CollatzSequence::new(n).count()))
         .max_by_key(|&(_, count)| count)
         .unwrap();
-    n
+    n as i64
 }

@@ -21,7 +21,7 @@ const NUMBERS: [u64; 1000] = [
     7,1,6,3,6,2,6,9,5,6,1,8,8,2,6,7,0,4,2,8,2,5,2,4,8,3,6,0,0,8,2,3,2,5,7,5,3,0,4,2,0,7,5,2,9,6,3,4,5,0
 ];
 
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     let mut end = 13;
     let mut largest = 0;
     while end < NUMBERS.len() {
@@ -31,5 +31,5 @@ pub fn main() -> u64 {
         }
         end += 1;
     }
-    largest
+    largest as i64
 }

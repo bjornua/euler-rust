@@ -21,4 +21,8 @@ pub mod euler020;
 pub mod euler021;
 pub mod euler022;
 pub mod euler023;
+pub mod euler024;
+pub mod euler025;
+pub mod euler026;
+pub mod euler027;
 pub mod euler067;

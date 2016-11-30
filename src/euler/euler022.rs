@@ -35,8 +35,8 @@ fn char_value(c: char) -> u64 {
         .expect("Invalid character")
 }
 
-pub fn main() -> u64 {
+pub fn main() -> i64 {
     let mut names = names_parser(NAMES);
     names.sort();
-    names.into_iter().map(|name| name.chars().map(char_value).sum::<u64>()).enumerate().map(|(n, s)| ((n as u64) + 1) * s).sum()
+    names.into_iter().map(|name| name.chars().map(char_value).sum::<u64>()).enumerate().map(|(n, s)| ((n as u64) + 1) * s).sum::<u64>() as i64
 }

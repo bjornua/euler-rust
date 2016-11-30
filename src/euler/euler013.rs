@@ -105,7 +105,7 @@ const NUMBERS: [[u8; 50]; 100] = [
     [5,3,5,0,3,5,3,4,2,2,6,4,7,2,5,2,4,2,5,0,8,7,4,0,5,4,0,7,5,5,9,1,7,8,9,7,8,1,2,6,4,3,3,0,3,3,1,6,9,0]
 ];
 
-pub fn main () -> u64 {
+pub fn main() -> i64 {
     let mut d = DigitsBuf::from(0);
     for x in NUMBERS.into_iter() {
         let r: &Digits = Digits::new(x as &[u8]);
@@ -113,6 +113,6 @@ pub fn main () -> u64 {
     }
 
     let d = d.into_iter().take(10);
-    d.enumerate().map(|(n, d)| (10 as u64).pow((9-n) as u32) * (*d as u64)).sum()
+    d.enumerate().map(|(n, d)| (10 as u64).pow((9-n) as u32) * (*d as u64)).sum::<u64>() as i64
 }
 

@@ -4,6 +4,6 @@ const NUMBERS: &'static [u64] = &[59, 73, 41, 52, 40, 09, 26, 53, 06, 34, 10, 51
 
 
 
-pub fn main() -> u64 {
-    maximum_path_sum(NUMBERS)
+pub fn main() -> i64 {
+    maximum_path_sum(NUMBERS) as i64
 }
