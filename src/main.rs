@@ -67,5 +67,6 @@ const EULERS: &'static [(u64, fn() -> i64)] = &[
     (25, euler::euler025::main),
     (26, euler::euler026::main),
     (27, euler::euler027::main),
+    (28, euler::euler028::main),
     (67, euler::euler067::main),
 ];
