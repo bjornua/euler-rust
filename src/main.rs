@@ -4,12 +4,27 @@ mod utils;
 mod digits;
 
 use std::env;
+use std::time::{Instant, Duration};
+
+fn duration_to_ms(d: Duration) -> u64 {
+    d.as_secs() * 1000 + ((d.subsec_nanos() / 1_000_000)  as u64)
+}
+
+fn time_it<T, F: FnOnce() -> T>(f: F) -> (Duration, T) {
+    let begin = Instant::now();
+    let res = f();
+    let elapsed = begin.elapsed();
+    return (elapsed, res)
+}
 
 fn run_euler(n: u64) -> Option<()> {
     for &(num, func) in EULERS {
         if num == n {
-            println!("Problem {n}: https://projecteuler.net/problem={n}", n = n);
-            println!("ANSWER  {n}: {}", func(), n=n);
+            println!("Problem {n: >3}: https://projecteuler.net/problem={n}", n = n);
+            let (time, result) =  time_it(|| func());
+            let time_s = duration_to_ms(time) / 1000;
+            let time_ms = duration_to_ms(time) % 1000;
+            println!("ANSWER  {n: >3}: {time_s}.{time_ms:04}s - {result}", result=result, time_s=time_s, time_ms=time_ms, n=n);
             return Some(());
         }
     }
